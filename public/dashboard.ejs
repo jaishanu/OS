@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="header">
+    <img id="a" src="./Presentation1.jpg"/>
+</div>
+  <div>
+    <a href="/logout/<%=email%>">
+        <button>log out</button>
+    </a>
+  </div>
+  <div>
+    <p class="twocolumn">Job1</p>
+    <button onclick="myFunction('myDIV1')" class="twpcolumn">Apply</button>
+  </div>
+  <div id="myDIV1">
+    <form autocomplete="off" action="/job/job1" method="post">
+        <input style="display: none;" value="<%= email %>" name="email"/>
+        <input id="check1" name="fname"/>
+        <input id="check2" name="lname"/>
+        <input id="check3" name="age"/>
+        <input id="b1" type="submit" value="submit"/>
+    </form>
+  </div>
+  <div>
+    <p class="twocolumn">Job2</p>
+    <button onclick="myFunction('myDIV2')" class="twpcolumn">Apply</button>
+  </div>
+  <div id="myDIV2">
+    <form autocomplete="off" action="/job/job2" method="post">
+        <input style="display: none;" value="<%= email %>" name="email"/>
+        <input id="chack4" name="fname"/>
+        <input id="check5" name="lname"/>
+        <input id="check6" name="age"/>
+        <input id="b2"  type="submit"  value="submit"/>
+    </form>
+  </div>
+  <div id="btm">
+        <div id="three-column">
+            <P><a href="./about.html">About Us</a></P>
+        </div>
+        <div id="three-column">
+            <p><a href="./contactus.html">     Contact us</a></p>
+        </div>
+        <div id="three-column">
+             <p><a href="/">     Home</a></p>
+        </div>
+        <div style="text-align: center;background-color: black;color: blanchedalmond;">&copy; Copyright 2025</div>
+</div>
+<script src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+#header{
+    background-color: #093FB4;
+    height: 60px;
+}
+#a{
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#card{
+    position: relative;
+    left: 35%;
+    top: 30%;
+    height: 40%;
+    width: 30%;
+    border-style: solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: #FFD8D8;
+}
+#btm{
+    background-color: #ED3500;}
+#myDIV1,#myDIV2{
+    display: none;
+}
+#three-column{
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+.middle{
+    background-image:url(cat.png);
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+}
+.twocolumn{
+    display: inline-block;
+    width: 50%;
+}
