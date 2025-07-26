@@ -5,19 +5,12 @@ import { Client } from 'pg';
 import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cookieParser from 'cookie-parser';
-import { createDiffieHellmanGroup } from "crypto";
-import Razorpay from "razorpay";
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 var email='';
-
-const razorpayInstance = new Razorpay({
-    key_id: rzp_test_fiIwmRET6CApc2,
-    key_secret: YAEUthsup8SijNs3iveeVlL1
-});
 
 app.use(express.json());       
 const client = new Client({
@@ -47,6 +40,14 @@ app.get('/solution',function(req,res){
 });
 app.get('/logout/:id',function(req,res){
     res.redirect('/');
+});
+app.post("/home/admlogin",function(req,res){
+  const query='select * from users';
+  client.query(query,(err,res1)=>{
+    res.render(__dirname+'/public/admpage.ejs',{
+    data:res1.rows
+  });
+  });
 });
 //retrieve email and password and enter dashboard, else redirect to home page
 app.post('/home',function(req,res){

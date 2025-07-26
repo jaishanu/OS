@@ -1,0 +1,7 @@
+<%if(!locals.data){%>
+    <h2>No record available</h2>
+<%} else {%>
+    <%for(let row=0;row<data.length;row++){%>
+        <h3><span><%=data[row]['email']+", "%><%=data[row]['firstname']%></span></h3>
+    <%}%>
+<%}%>

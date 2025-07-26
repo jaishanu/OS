@@ -3,9 +3,9 @@
     height: 60px;
 }
 #a{
-    height: 40px;
     margin-top: 10px;
     margin-left: 10px;
+    color:aquamarine;
 }
 #card{
     position: relative;
@@ -30,7 +30,7 @@
     text-align: center;
 }
 .middle{
-    background-image:url(cat.png);
+    background-image:url('./OIP1.png');
     background-size: cover;
     height: 600px;
     width: 100%;
