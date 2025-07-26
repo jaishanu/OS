@@ -13,11 +13,11 @@
     top: 30%;
     height: 40%;
     width: 30%;
-    border-style: solid;
     border-radius: 10px;
     padding-left: 10px;
     padding-top: 10px;
     background-color: #FFD8D8;
+    box-shadow: 5px 5px 5px 5px gray;
 }
 #btm{
     background-color: #ED3500;}
