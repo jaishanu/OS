@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="./index.css"/>
+<div id="header">
+    <h1 id="a">Online Solutions</h1>
+</div>
 <%if(!locals.data){%>
     <h2>No record available</h2>
 <%} else {%>
@@ -5,3 +9,16 @@
         <h3><span><%=data[row]['email']+", "%><%=data[row]['firstname']%></span></h3>
     <%}%>
 <%}%>
+<div id="btm">
+        <div id="three-column">
+            <P><a href="./about.html">About Us</a></P>
+        </div>
+        <div id="three-column">
+            <p><a href="./contactus.html">     Contact us</a></p>
+        </div>
+        <div id="three-column">
+             <p><a href="/">     Home</a></p>
+        </div>
+        <div style="text-align: center;background-color: black;color: blanchedalmond;">&copy; Copyright 2025</div>
+</div>    
+</body>

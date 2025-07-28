@@ -28,7 +28,7 @@ app.use(express.static(__dirname+'/public'));
 
 //send home page
 app.get('/',function(req,res){
-  res.sendFile(__dirname+'/index.html');
+  res.sendFile(__dirname+'/public/index.html');
 });
 //send set password page
 app.get('/setpassword/:id',function(req,res){
