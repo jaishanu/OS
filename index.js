@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 var email='';
-
+//Hvouk2ENaFBaLbfhtsWi4Qp3tp9L8QwNUSlSL2ef
+//cxkpCKI3K5kc7McyFWYBBflC9ymnhxVfaeuYIXpV
 app.use(express.json());       
 const client = new Client({
     user: 'postgres',
@@ -42,11 +43,20 @@ app.get('/logout/:id',function(req,res){
     res.redirect('/');
 });
 app.post("/home/admlogin",function(req,res){
-  const query='select * from users';
-  client.query(query,(err,res1)=>{
-    res.render(__dirname+'/public/admpage.ejs',{
-    data:res1.rows
-  });
+  req.body.password=req.body.password.substring(0, req.body.password.length - 1);
+  const query1="select * from adm where email=$1";
+  client.query(query1,[req.body.email],(err,res2)=>{
+    if (res2.rows.length==0 || res2.rows[0].password!=req.body.password){
+      res.sendFile(__dirname+"/public/admlogin.html");
+    }
+    else if(res2.rows.length){
+      const query='select * from users';
+      client.query(query,(err,res1)=>{
+        res.render(__dirname+'/public/admpage.ejs',{
+          data:res1.rows
+        });
+      });
+    }
   });
 });
 //retrieve email and password and enter dashboard, else redirect to home page
